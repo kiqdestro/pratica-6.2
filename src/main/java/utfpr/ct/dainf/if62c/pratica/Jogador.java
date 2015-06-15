@@ -22,8 +22,9 @@ public class Jogador implements Comparable<Jogador> {
         return numero + " - " + nome;
     }
 
+    @Override
     public int compareTo(Jogador jogador) {
-        return numero – jogador.numero;
+        return numero - jogador.numero;
     }
     
     public void setNome(String nome)
