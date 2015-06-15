@@ -34,26 +34,26 @@ public class JogadorComparator implements Comparator<Jogador> {
         {
             
             //Verificando se os numeros são iguais
-            if(comparaNumero(jogador1.numero, jogador2.numero) == 0)
+            if(numasc(jogador1.numero, jogador2.numero) == 0)
             {
                 //comparando pelo nome
-                return comparaNome(jogador1.nome, jogador2.nome);
+                return nomeasc(jogador1.nome, jogador2.nome);
             }
-            return comparaNumero(jogador1.numero, jogador2.numero);
+            return numasc(jogador1.numero, jogador2.numero);
         }
         else
         {
             
             //Verificando se os nomes são equivalentes
-            if(comparaNome(jogador1.nome, jogador2.nome) == 0)
+            if(nomeasc(jogador1.nome, jogador2.nome) == 0)
             {
                 //Comparando pelo numero
-                return comparaNumero(jogador1.numero, jogador2.numero);
+                return numasc(jogador1.numero, jogador2.numero);
             }
-            return comparaNome(jogador1.nome, jogador2.nome);
+            return nomeasc(jogador1.nome, jogador2.nome);
         }
     }
-    public int comparaNome(String n1, String n2)
+    public int nomeasc(String n1, String n2)
     {
         //Comparando o tamanho dos nomes
         if(n1.length() < n2.length())
@@ -64,7 +64,7 @@ public class JogadorComparator implements Comparator<Jogador> {
                 if(n1.charAt(i) < n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nomeasc)
                         return -1;
                     else
                         return 1;
@@ -72,7 +72,7 @@ public class JogadorComparator implements Comparator<Jogador> {
                 if(n1.charAt(i) > n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nomeasc)
                         return 1;
                     else
                         return -1;
@@ -87,7 +87,7 @@ public class JogadorComparator implements Comparator<Jogador> {
                 if(n1.charAt(i) < n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nomeasc)
                         return -1;
                     else
                         return 1;
@@ -95,7 +95,7 @@ public class JogadorComparator implements Comparator<Jogador> {
                 if(n1.charAt(i) > n2.charAt(i))
                 {
                     //Verificando se é acendente
-                    if(comparacaoNome)
+                    if(nomeasc)
                         return 1;
                     else
                         return -1;
@@ -106,10 +106,10 @@ public class JogadorComparator implements Comparator<Jogador> {
         return 0;
     }
     
-    public int comparaNumero(int n1, int n2)
+    public int numasc(int n1, int n2)
     {
         //Verificando se é crescente ou decrescente
-        if(comparacaoNumero)
+        if(numasc)
             return n1 - n2;
         else
             return (n1 - n2)*-1;
